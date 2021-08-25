@@ -12,7 +12,7 @@ The length of original message is *(j - i)* bits, after multiplication with *G*,
 Then we transform the orginal 010101 message by changing "0" to "+1" and "1" to "-1" in order to decode convieniently.
 ### LDPC Decoder
 Use an example to tell how iteration works, below is a matrix *H*
-![Matrix](./tmp/matrix.png)
+![Matrix](./tmp/f3.png)  
 Suppose the orignal V1 ~ V10 signal are [1.5, 1.8, -2, 3, -4, -2.5, -1, 0.5, 5, 3.4] respectively.  
 Below we focus on Check Node C1.
 1. Find the minimum: Find the minimum of the absolute value of all Variable Nodes that connected with C1 except itself.
@@ -26,7 +26,7 @@ Then use the return value to do step 1 and 2 to get the new Check Node value.
 5. Run all the steps (iteration) above until terminal condition.
 ## Deep Learning Model
 To improve the LDPC's decoding error rate, we use the below deep learning model. Unlike traditional method with fixed weights, the weights we get after training has better performance.  
-![Model](./tmp/model.png)
+![Model](./tmp/model.jpg)
 ## Result
 Test method:  
 66 bit message will be created every test, first passing through the encoder, adding noise which SNR is 6 ~ 8, and passing through the decoder.  
